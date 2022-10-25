@@ -15,7 +15,7 @@ public class APP4 {
 		try {
 			System.out.println("-----学籍信息系统-----");
 			ObjectInputStream in = new ObjectInputStream(
-					new FileInputStream("obj.bat"));
+					new FileInputStream(".//Files//obj.bat"));
 			try {
 				s = ((ArrayList<Student2>) in.readObject());
 				System.out.println("Loading...");
@@ -32,7 +32,7 @@ public class APP4 {
 			menu();
 			try {
 				ObjectOutputStream out = new ObjectOutputStream(
-						new FileOutputStream("obj.bat"));
+						new FileOutputStream(".\\Files\\obj.bat"));
 				out.writeObject(s);
 				out.close();
 			} catch (FileNotFoundException e) {
@@ -114,13 +114,16 @@ public class APP4 {
 		}
 		Student2[] s_all = new Student2[s.size()];
 		s.toArray(s_all);
+		int flag = 0;		//轮询标志位
 		for (Student2 s1 : s_all) {
 
 			if (s1.getSerialID().trim().equals(name.trim())) {
 				System.out.println(s1.toString());
-			} else {
-				System.out.println("Not Found!");
+				flag++;
 			}
+		}
+		if (flag == 0){
+			System.out.println("查无此人!");
 		}
 	}
 
