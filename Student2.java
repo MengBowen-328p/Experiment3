@@ -5,13 +5,16 @@ public class Student2 implements Serializable {
 	private int age;
 	private int grade;
 	private String sex;
-	private int serialID;
+	private String serialID;
 	private int birthday;
 
-	public Student2(String name, int age, int grade, String sex, int serialID, int birthday) {
+	public Student2(String name, int age, int grade, String sex, String serialID, int birthday) {
 		this.name = name;
 		this.age = age;
 		this.grade = grade;
+		this.sex = sex;
+		this.serialID = serialID;
+		this.birthday = birthday;
 	}
 
 	public void setName(String name) {
@@ -26,6 +29,18 @@ public class Student2 implements Serializable {
 		this.grade = grade;
 	}
 
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public void setSerialID(String serialID) {
+		this.serialID = serialID;
+	}
+
+	public void setBirthday(int birthday) {
+		this.birthday = birthday;
+	}
+
 	public String getName() {
 		return this.name;
 	}
@@ -38,12 +53,25 @@ public class Student2 implements Serializable {
 		return this.grade;
 	}
 
+	public String getSex() {
+		return this.sex;
+	}
+
+	public String getSerialID() {
+		return this.serialID;
+	}
+
+	public int getBirthday() {
+		return this.birthday;
+	}
+
 	public Student2() {
 
 	}
 
 	public String toString() {
-		return name + " " + age + " " + grade;
+		return "姓名:" + name + " " + "年龄:" + age + " " + "年级:" + grade + " " + "性别:" + sex + " " + "ID:" + serialID + " "
+				+ "生日:" + birthday;
 	}
 
 }
