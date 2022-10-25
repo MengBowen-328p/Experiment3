@@ -1,6 +1,6 @@
 import java.io.Serializable;
 
-public class Student2 implements Serializable {
+public class Students implements Serializable {
 	private String name;
 	private int age;
 	private int grade;
@@ -8,7 +8,7 @@ public class Student2 implements Serializable {
 	private String serialID;
 	private int birthday;
 
-	public Student2(String name, int age, int grade, String sex, String serialID, int birthday) {
+	public Students(String name, int age, int grade, String sex, String serialID, int birthday) {
 		this.name = name;
 		this.age = age;
 		this.grade = grade;
@@ -65,7 +65,7 @@ public class Student2 implements Serializable {
 		return this.birthday;
 	}
 
-	public Student2() {
+	public Students() {
 
 	}
 

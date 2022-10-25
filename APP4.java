@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class APP4 {
 
-	static ArrayList<Student2> s = new ArrayList<Student2>(); // 静态化
+	static ArrayList<Students> s = new ArrayList<Students>(); // 静态化
 
 	public static void main(String[] args) {
 		try {
@@ -17,7 +17,7 @@ public class APP4 {
 			ObjectInputStream in = new ObjectInputStream(
 					new FileInputStream(".//Files//obj.bat"));
 			try {
-				s = ((ArrayList<Student2>) in.readObject());
+				s = ((ArrayList<Students>) in.readObject());
 				System.out.println("Loading...");
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
@@ -71,7 +71,7 @@ public class APP4 {
 
 	public static void add() {
 		Scanner in = new Scanner(System.in);
-		Student2 s1 = new Student2();
+		Students s1 = new Students();
 		System.out.println("请输入姓名: ");
 		s1.setName(in.nextLine());
 		System.out.println("请输入年龄: ");
@@ -91,9 +91,9 @@ public class APP4 {
 
 	public static void show() {
 		System.out.println("当前记载了如下信息:");
-		Student2[] s_all = new Student2[s.size()];
+		Students[] s_all = new Students[s.size()];
 		s.toArray(s_all);
-		for (Student2 s1 : s_all) {
+		for (Students s1 : s_all) {
 			System.out.println(s1.toString());
 		}
 	}
@@ -112,10 +112,10 @@ public class APP4 {
 			name = new String(temp);
 		} catch (IOException e) {
 		}
-		Student2[] s_all = new Student2[s.size()];
+		Students[] s_all = new Students[s.size()];
 		s.toArray(s_all);
 		int flag = 0;		//轮询标志位
-		for (Student2 s1 : s_all) {
+		for (Students s1 : s_all) {
 
 			if (s1.getSerialID().trim().equals(name.trim())) {
 				System.out.println(s1.toString());
@@ -136,9 +136,9 @@ public class APP4 {
 			name = new String(temp);
 		} catch (IOException e) {
 		}
-		Student2[] s_all = new Student2[s.size()];
+		Students[] s_all = new Students[s.size()];
 		s.toArray(s_all);
-		for (Student2 s1 : s_all) {
+		for (Students s1 : s_all) {
 
 			if (s1.getSerialID().trim().equals(name.trim())) {
 				System.out.println(s.indexOf(s1));
